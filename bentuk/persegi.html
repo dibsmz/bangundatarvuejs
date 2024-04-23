@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aritmatika VueJS</title>
+  <!-- CDN Vue.js -->
+  <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+
+<body>
+  <div class="p-4 container">
+    
+    <nav class="nav nav-pills nav-justified">
+      <a class="nav-link active" href="/index.html">Aritmatika VueJS</a>
+      <a class="nav-link" href="/bentuk/lingkaran.html">Lingkaran</a>
+      <a class="nav-link" href="/bentuk/persegi.html">Persegi</a>
+      <a class="nav-link" href="/bentuk/segitiga.html">Segitiga</a>
+    </nav>
+
+    <div class="p-4 row gx-5">
+      <div id="app" class="form-control">
+        <form class="row">
+          <p class="display-5">{{ message1 }}</p>
+          <p>Luas Lingkaran : {{ luaspersegi }}</p>
+          <div class="col-auto">
+            <label for="staticEmail2" class="visually-hidden">Email</label>
+            <input type="text" readonly class="form-control-plaintext" id="staticEmail2" value="Masukkan Jari-Jari">
+          </div>
+          <div class="col-auto">
+            <label for="inputPassword2" class="visually-hidden">Password</label>
+            <input type="number" class="form-control" id="inputPassword2" placeholder="Radius" v-model="sisi">
+          </div>
+          <div class="col-auto">
+            <button @click="greet" class="btn btn-primary mb-3">Perjelas</button>
+      
+
+          </div>
+        </form>
+      </div>
+    </div>
+    <footer class="bg-light py-3">
+      <div class="container text-center">
+        <a href="https://instagram.com/dibsmz" style="text-decoration: none;"><p class="text-muted">Copyright © 2024 Adib Muhammad Zain. All rights reserved.</p></a>
+      </div>
+    </footer>
+  <script>
+    new Vue({
+      el: '#app',
+      data: {
+        message1: 'Rumus Persegi',
+        sisi: 0,
+      },
+
+      methods: {
+        greet: function () {
+          alert(this.luaspersegi);
+        }
+      },
+
+      computed: {
+        luaspersegi: function () {
+          return parseInt(this.sisi)*parseInt(this.sisi);
+        }
+      },
+    });
+  </script>
+</body>
+</html>
